@@ -12,17 +12,16 @@ class ResultadoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_resultado)
 
-        // Recuperar todos los parámetros acumulados mediante Intent
-        val departamento = intent.getStringExtra("DEPARTAMENTO") ?: ""
-        val municipio    = intent.getStringExtra("MUNICIPIO")    ?: ""
-        val distrito     = intent.getStringExtra("DISTRITO")     ?: ""
+        val departamento = intent.getStringExtra("Departamento") ?: ""
+        val municipio    = intent.getStringExtra("Municipio")    ?: ""
+        val distrito     = intent.getStringExtra("Distrito")     ?: ""
 
         val rutaCompleta = "$departamento – $municipio – $distrito"
         findViewById<TextView>(R.id.tvRuta).text = rutaCompleta
 
-        findViewById<TextView>(R.id.tvDepartamento).text = "Departamento: $departamento"
-        findViewById<TextView>(R.id.tvMunicipio).text    = "Municipio: $municipio"
-        findViewById<TextView>(R.id.tvDistrito).text     = "Distrito: $distrito"
+        findViewById<TextView>(R.id.tvDepartamento).text = "$departamento"
+        findViewById<TextView>(R.id.tvMunicipio).text    = "$municipio"
+        findViewById<TextView>(R.id.tvDistrito).text     = "$distrito"
 
         findViewById<Button>(R.id.btnReinicio).setOnClickListener {
             val intent = Intent(this, DepartamentosActivity::class.java)
@@ -30,5 +29,10 @@ class ResultadoActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

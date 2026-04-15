@@ -90,9 +90,11 @@ class MunicipiosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_municipios)
 
-        val departamento = intent.getStringExtra("DEPARTAMENTO") ?: ""
+        val departamento = intent.getStringExtra("Departamento") ?: ""
 
         findViewById<TextView>(id.tvTitulo).text = "Municipios de $departamento"
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val municipios = municipiosPorDepartamento[departamento]
             ?: arrayOf("Sin datos disponibles")
@@ -102,9 +104,13 @@ class MunicipiosActivity : AppCompatActivity() {
 
         listView.setOnItemClickListener { _, _, position, _ ->
             val intent = Intent(this, DistritosActivity::class.java)
-            intent.putExtra("DEPARTAMENTO", departamento)
-            intent.putExtra("MUNICIPIO", municipios[position])
+            intent.putExtra("Departamento", departamento)
+            intent.putExtra("Municipio", municipios[position])
             startActivity(intent)
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

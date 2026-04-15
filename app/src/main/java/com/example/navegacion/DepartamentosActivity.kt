@@ -20,14 +20,14 @@ class DepartamentosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_departamentos)
 
-        findViewById<TextView>(R.id.tvTitulo).text = "Selecciona un Departamento"
+        findViewById<TextView>(R.id.tvTitulo).text = "Selecciona un departamento"
 
         val listView = findViewById<ListView>(R.id.listView)
         listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, departamentos)
 
         listView.setOnItemClickListener { _, _, position, _ ->
             val intent = Intent(this, MunicipiosActivity::class.java)
-            intent.putExtra("DEPARTAMENTO", departamentos[position])
+            intent.putExtra("Departamento", departamentos[position])
             startActivity(intent)
         }
     }

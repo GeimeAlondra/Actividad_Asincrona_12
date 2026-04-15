@@ -8,12 +8,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#1A237E"
+        android:background="#1565C0"
         android:padding="16dp"
         android:orientation="vertical">
 
         <TextView
-            android:text="División Política — Paso 3 de 3"
+            android:text="División política — Paso 3 de 3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#9FA8DA"
@@ -33,17 +33,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
-        android:text="Selecciona el distrito final"
+        android:text="Selecciona el distrito"
         android:textColor="#757575"
         android:textSize="13sp"
-        android:background="#E8EAF6" />
+        android:background="#E3F2FD" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="#9FA8DA"
+        android:divider="#BBDEFB"
         android:dividerHeight="1dp"
         android:background="#FFFFFF" />
 

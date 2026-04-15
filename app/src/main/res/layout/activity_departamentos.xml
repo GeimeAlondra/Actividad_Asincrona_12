@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="División Política — Paso 1 de 3"
+            android:text="División política — Paso 1 de 3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#BBDEFB"
