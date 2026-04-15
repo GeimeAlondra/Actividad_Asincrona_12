@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.navegacion">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="División Política SV"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+        <activity
+            android:name=".DepartamentosActivity"
+            android:label="Departamentos"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MunicipiosActivity"
+            android:label="Municipios"
+            android:parentActivityName=".DepartamentosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DepartamentosActivity" />
+        </activity>
+
+        <activity
+            android:name=".DistritosActivity"
+            android:label="Distritos"
+            android:parentActivityName=".MunicipiosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MunicipiosActivity" />
+        </activity>
+
+        <activity
+            android:name=".ResultadoActivity"
+            android:label="Resultado"
+            android:parentActivityName=".DistritosActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DistritosActivity" />
+        </activity>
+
+    </application>
+
+</manifest>
